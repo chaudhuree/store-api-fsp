@@ -1,0 +1,37 @@
+URL=localhost:3000/api/v1
+
+{URL}/products -->main
+
+{URL}/products/static -->static for testing
+
+{URL}/products?name=john&featured=true
+{URL}/products?featured=false&company=ikea
+
+{URL}/products?sort=name
+{URL}/products?sort=-name
+{URL}/products?sort=-name,price
+
+//select
+{URL}/products?fields=name,price
+{URL}/products?sort=-name,price&fields=company,rating
+
+//pagination
+//bydefault page is 1
+{URL}/products?sort=-name,price&limit=20
+{URL}/products?sort=-name,price&fields=company,rating&limit=10&page=2
+
+//numeric filter
+{URL}/products?numericFilters=price>40,rating>=4
+>,>=,<,<=,=
+{price:{'$gt':40},rating:{'$gte':4}}
+
+
+
+
+
+
+
+
+
+
+
